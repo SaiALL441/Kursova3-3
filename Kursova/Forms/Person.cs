@@ -32,10 +32,10 @@ namespace Kursova.Forms
         private void постачальникиBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.постачальникиBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dBCursDataSet);
-            постачальникиBindingSource.EndEdit();
-            dBCursDataSet.WriteXml($"{Application.StartupPath}/dataPerson.dat");
+            this.постачальникиBindingSource1.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.dBCursDataSet1);
+            постачальникиBindingSource1.EndEdit();
+            dBCursDataSet1.WriteXml($"{Application.StartupPath}/dataPerson.dat");
             
             MessageBox.Show("Дані збережено.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -44,13 +44,10 @@ namespace Kursova.Forms
 
         private void Person_Load(object sender, EventArgs e)
         {
-            
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Місто". При необходимости она может быть перемещена или удалена.
-            this.містоTableAdapter.Fill(this.dBCursDataSet.Місто);
-            
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Постачальники". При необходимости она может быть перемещена или удалена.
-            this.постачальникиTableAdapter.Fill(this.dBCursDataSet.Постачальники);
-           
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Постачальники". При необходимости она может быть перемещена или удалена.
+            this.постачальникиTableAdapter1.Fill(this.dBCursDataSet1.Постачальники);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Місто". При необходимости она может быть перемещена или удалена.
+            this.містоTableAdapter1.Fill(this.dBCursDataSet1.Місто);
 
         }
 
@@ -76,17 +73,17 @@ namespace Kursova.Forms
         {
             
             
-            містоBindingSource.Filter = "НазваМісто=\'" + toolStripTextBox1.Text + "\'";
+            містоBindingSource1.Filter = "НазваМісто=\'" + toolStripTextBox1.Text + "\'";
            
-            постачальникиBindingSource.Filter = "Найменування=\'" + toolStripTextBox1.Text + "\'";
+            постачальникиBindingSource1.Filter = "Найменування=\'" + toolStripTextBox1.Text + "\'";
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
            
-            містоBindingSource.Filter = null;
+            містоBindingSource1.Filter = null;
             
-            постачальникиBindingSource.Filter = null;
+            постачальникиBindingSource1.Filter = null;
         }
 
        
@@ -109,12 +106,7 @@ namespace Kursova.Forms
                 
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        private void адресаLabel_Click(object sender, EventArgs e)
         {
 
         }

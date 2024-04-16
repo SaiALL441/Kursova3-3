@@ -18,22 +18,26 @@ namespace Kursova.Forms
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=lanister;Initial Catalog=DBCurs;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=lanister;Initial Catalog=DBCurs;User ID=sa;Password=***********");
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Країна". При необходимости она может быть перемещена или удалена.
+            this.країнаTableAdapter1.Fill(this.dBCursDataSet1.Країна);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Одиниця_вимірювання_кількості". При необходимости она может быть перемещена или удалена.
+            this.одиниця_вимірювання_кількостіTableAdapter1.Fill(this.dBCursDataSet1.Одиниця_вимірювання_кількості);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Сорт". При необходимости она может быть перемещена или удалена.
+            this.сортTableAdapter1.Fill(this.dBCursDataSet1.Сорт);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Місто". При необходимости она может быть перемещена или удалена.
+            this.містоTableAdapter1.Fill(this.dBCursDataSet1.Місто);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet1.Тип". При необходимости она может быть перемещена или удалена.
+            this.типTableAdapter1.Fill(this.dBCursDataSet1.Тип);
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            new Product().Show();
-            this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new Person().Show();
+            new Form1().Show();
             this.Hide();
         }
 
@@ -43,90 +47,71 @@ namespace Kursova.Forms
             this.Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new Person().Show();
             this.Hide();
         }
 
-        private void містоBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.містоBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dBCursDataSet);
-
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Країна". При необходимости она может быть перемещена или удалена.
-            this.країнаTableAdapter.Fill(this.dBCursDataSet.Країна);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Одиниця_вимірювання_кількості". При необходимости она может быть перемещена или удалена.
-            this.одиниця_вимірювання_кількостіTableAdapter.Fill(this.dBCursDataSet.Одиниця_вимірювання_кількості);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Сорт". При необходимости она может быть перемещена или удалена.
-            this.сортTableAdapter.Fill(this.dBCursDataSet.Сорт);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Тип". При необходимости она может быть перемещена или удалена.
-            this.типTableAdapter.Fill(this.dBCursDataSet.Тип);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBCursDataSet.Місто". При необходимости она может быть перемещена или удалена.
-            this.містоTableAdapter.Fill(this.dBCursDataSet.Місто);
-
+            new Product().Show();
+            this.Hide();
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
-            містоBindingSource.EndEdit();
-            містоTableAdapter.Update(dBCursDataSet.Місто);
+            містоBindingSource1.EndEdit();
+            містоTableAdapter1.Update(dBCursDataSet1.Місто);
         }
 
         private void deletebt_Click(object sender, EventArgs e)
         {
-            містоBindingSource.RemoveCurrent();
-          
+            містоBindingSource1.RemoveCurrent();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            типBindingSource.EndEdit();
-            типTableAdapter.Update(dBCursDataSet.Тип);
+            типBindingSource1.EndEdit();
+            типTableAdapter1.Update(dBCursDataSet1.Тип);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            типBindingSource.RemoveCurrent();
+            типBindingSource1.RemoveCurrent();
         }
 
         private void saveSort_Click(object sender, EventArgs e)
         {
-            сортBindingSource.EndEdit();
-            сортTableAdapter.Update(dBCursDataSet.Сорт);
+            сортBindingSource1.EndEdit();
+            сортTableAdapter1.Update(dBCursDataSet1.Сорт);
         }
 
         private void deleteSort_Click(object sender, EventArgs e)
         {
-            сортBindingSource.RemoveCurrent();
+            сортBindingSource1.RemoveCurrent();
         }
 
         private void saveQ_Click(object sender, EventArgs e)
         {
-            одиниця_вимірювання_кількостіBindingSource.EndEdit();
-            одиниця_вимірювання_кількостіTableAdapter.Update(dBCursDataSet.Одиниця_вимірювання_кількості);
+            одиниця_вимірювання_кількостіBindingSource1.EndEdit();
+            одиниця_вимірювання_кількостіTableAdapter1.Update(dBCursDataSet1.Одиниця_вимірювання_кількості);
         }
 
         private void deleteQ_Click(object sender, EventArgs e)
         {
-            
-            одиниця_вимірювання_кількостіBindingSource.RemoveCurrent();
+            одиниця_вимірювання_кількостіBindingSource1.RemoveCurrent();
         }
 
         private void saveCountry_Click(object sender, EventArgs e)
         {
-            країнаBindingSource.EndEdit();
-            країнаTableAdapter.Update(dBCursDataSet.Країна);
+            країнаBindingSource1.EndEdit();
+            країнаTableAdapter1.Update(dBCursDataSet1.Країна);
         }
 
         private void deleteCountry_Click(object sender, EventArgs e)
         {
-            країнаBindingSource.RemoveCurrent();
+            країнаBindingSource1.RemoveCurrent();
         }
     }
 }

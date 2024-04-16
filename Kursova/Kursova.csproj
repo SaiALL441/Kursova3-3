@@ -101,6 +101,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBCursDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBCursDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCursDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBCursDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCursDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +178,28 @@
     </None>
     <None Include="DBCursDataSet.xss">
       <DependentUpon>DBCursDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBCursDataSet1.xsc">
+      <DependentUpon>DBCursDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBCursDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBCursDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBCursDataSet1.xss">
+      <DependentUpon>DBCursDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBCursDataSet2.xsc">
+      <DependentUpon>DBCursDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBCursDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBCursDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBCursDataSet2.xss">
+      <DependentUpon>DBCursDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
